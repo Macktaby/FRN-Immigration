@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Product Details</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/header.js"></script>
+	<script src="js/sidebar.js"></script>
+	<script src="js/reem/product-details.js"></script>
+	<script src="js/reem/user.js"></script>
+	<script>
+        $(document).ready(function () {
+            $.support.cors = true;
+			
+			var id = getUrlVars()["id"];
+			
+			sidebar();
+			ProductDetails(id);
+        });
+    </script>
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+	</header><!--/header-->
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar" id="sidebar"></div> 
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5" id="ProductImages">
+
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
+								<h2 id="Name"></h2>
+								<p id="Desc"></p>
+								<img src="images/product-details/rating.png" alt="" />
+								<span style="display:block;">
+									<span id="Price"> $ </span>
+									<br/>
+									<div>
+										<label>Quantity:</label>
+										<input type="text" id="quantity" value="3" />
+									</div>									
+								</span>
+								<p id="Branche"><b>Branch:</b> </p>
+								<p id="Category"><b>Category:</b> </p>
+								<p id="Brand"><b>Brand:</b> </p>
+								
+								<div style="padding-top:10px;">
+									<button type="button" class="btn btn-fefault cart" onclick="reserveProduct();">
+										<i class="fa fa-shopping-cart"></i>
+										Add to cart
+									</button>
+									<button type="button" class="btn btn-fefault cart" onclick="addFavorite();">
+										<i class="fa fa-heart"></i>
+										Add to Wishlist
+									</button>
+								</div>
+								<p class="err" id="Msgerr"></p>
+								<div><p id="MessageProduct" style="text-align:center;"></p></div>
+								
+								
+								 <span class="BoxTitleRight_two">
+            <script type="text/javascript">
+                function newPopup(url) {
+                    popupWindow = window.open(
+                        url, 'popUpWindow', 'height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+                }
+
+                var linkkkk = 'http://www.google.com';
+              
+
+            </script>
+
+            <a class="linkc" href="JavaScript:newPopup('http://www.facebook.com/sharer.php?s=100&amp;p%5Btitle%5D=welcome&amp;p[summary]=jjjjjjjjj&amp;p[url]='+linkkkk+'&amp;&p[images][0]=http://www.emaples.com/Style/Images/Web-site_01.png')">
+                <img src="images/facebook.png" />
+            </a>
+
+            <a class="linkc" href="JavaScript:newPopup('https://twitter.com/share?url='+linkkkk+'&text=Femina website');">
+                <img src="images/twitter.png" />
+            </a>
+            <a class="linkc" href="JavaScript:newPopup('https://plus.google.com/share?url='+linkkkk);">
+                <img src="images/google-plus.png" />
+            </a>
+            <a class="linkc" href="JavaScript:newPopup('http://www.pinterest.com/pin/create/button/?url='+linkkkk)">
+                <img src="images/pinterest.png" />
+            </a>
+        </span>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+					
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="reviews" >
+								<div class="col-sm-12">
+									<ul>
+										<li><a href=""><i class="fa fa-user"></i>ahmed</a></li>
+										<li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
+										<li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
+									</ul>
+									<p><b>Write Your Review</b></p>
+									
+									<form action="#">
+										<textarea name="" id="review"></textarea>
+										<b>Rating: </b> 
+										<select id="Rating" style="width:20%;">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+										<br/>
+										<p id="MessageReview" style="text-align:center; padding-top:5px;"></p>
+										<button type="button" class="btn btn-default pull-right" onclick="addProductReview();">
+											Submit
+										</button>
+									</form>
+								</div>
+							</div>
+							
+						</div>
+					</div><!--/category-tab-->
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer id="footer"><!--Footer-->
+		
+	</footer><!--/Footer-->
+	
+
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
